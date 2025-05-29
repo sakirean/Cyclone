@@ -599,8 +599,8 @@ int main(int argc, char* argv[])
                                     matchFound=true;
                                     Int mPriv=priv;
                                     int idx=idxArr[j];
-                                    if(idx<256){ Int off; off.SetInt32(idx); mPriv.Add(&off); }
-                                    else       { Int off; off.SetInt32(idx-256); mPriv.Sub(&off); }
+                                    if(idx<512){ Int off; off.SetInt32(idx); mPriv.Add(&off); }
+                                    else       { Int off; off.SetInt32(idx-512); mPriv.Sub(&off); }
                                     foundPriv=padHexTo64(intToHex(mPriv));
                                     foundPub=pointToCompressedHex(ptBatch[idx]);
                                     foundWIF=P2PKHDecoder::compute_wif(foundPriv,true);
